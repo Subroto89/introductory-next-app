@@ -7,6 +7,8 @@ export default function LoginPage() {
   const router = useRouter();
 
   const handleLogin = async () => {
+
+  
     // Call signIn() with the provider name and disable the default redirect
     const result = await signIn('google', {
       redirect: false,

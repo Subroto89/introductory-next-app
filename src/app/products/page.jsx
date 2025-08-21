@@ -1,17 +1,8 @@
+// src/app/products/page.jsx
 import Link from 'next/link';
+import { products } from '@/lib/products';
 
-// Fetch products from the Express.js server
-async function getProducts() {
-  const res = await fetch('http://localhost:5000/api/products');
-  if (!res.ok) {
-    throw new Error('Failed to fetch products');
-  }
-  return res.json();
-}
-
-export default async function ProductsPage() {
-  const products = await getProducts();
-
+export default function ProductsPage() {
   return (
     <div className="container mx-auto p-8">
       <h1 className="text-4xl font-bold text-center mb-10">Our Products</h1>
