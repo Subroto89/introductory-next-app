@@ -11,8 +11,8 @@ export default function ProductDetailsPage({ params }) {
   }
 
   return (
-    <div className="container mx-auto p-8">
-      <div className="bg-white rounded-lg shadow-lg p-8">
+    <div className="container mx-auto p-8 text-gray-700">
+      <div className="bg-white rounded-lg shadow-lg p-8 text-gray-700">
         <h1 className="text-4xl font-bold mb-4">{product.name}</h1>
         <p className="text-gray-600 mb-4">{product.description}</p>
         <p className="text-gray-800 font-bold text-2xl">${product.price}</p>

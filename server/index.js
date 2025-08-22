@@ -30,6 +30,18 @@ app.get('/api/products/:id', (req, res) => {
   }
 });
 
+// NEW: Endpoint to add a new product
+app.post('/api/products', (req, res) => {
+  const newProduct = {
+    id: (products.length + 1).toString(), // Simple ID generation
+    ...req.body, // Get data from the request body
+  };
+  products.push(newProduct); // Add to the mock array
+  console.log('Product added to mock database:', newProduct); // Log to server console
+  res.status(201).json({ message: 'Product added successfully', product: newProduct });
+});
+
+
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
