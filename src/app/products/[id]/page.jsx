@@ -3,7 +3,7 @@ import { products } from '@/lib/products';
 
 export default function ProductDetailsPage({ params }) {
   // Find the product that matches the ID from the URL
-  const product = products.find((p) => p.id === params.id);
+  const product = products.find((p) => p._id === params._id);
 
   // If no product is found, show the Next.js not-found page
   if (!product) {

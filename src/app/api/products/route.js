@@ -1,33 +1,46 @@
-// src/app/api/products/route.js
 import { NextResponse } from 'next/server';
-import clientPromise from '@/lib/mongodb'; // Import your MongoDB connection utility
+import clientPromise from '@/lib/mongodb';
 
-export async function POST(request) {
+// This handles GET requests to /api/products
+// It fetches all products from the database.
+export async function GET() {
   try {
-    // 1. Get the MongoDB client instance
     const client = await clientPromise;
-    
-    // 2. Select your database and collection
-    // Replace 'your-database-name' with the actual name of your database in MongoDB Atlas
-    // Replace 'products' with the actual name of your collection
-    const db = client.db('myNextIntroductory'); 
+    const db = client.db('myNextIntroductory');
     const productsCollection = db.collection('products');
 
-    // 3. Parse the request body to get the product data
-    const data = await request.json();
+    const products = await productsCollection.find({}).toArray();
 
-    // 4. Insert the new product into the database
+    return NextResponse.json(products, { status: 200 });
+  } catch (error) {
+    console.error('Error fetching products:', error);
+    return NextResponse.json({ message: 'Error fetching products.', error: error.message }, { status: 500 });
+  }
+}
+
+// This handles POST requests to /api/products
+// It adds a new product to the database.
+export async function POST(request) {
+  try {
+    const client = await clientPromise;
+    const db = client.db('myNextIntroductory');
+    const productsCollection = db.collection('products');
+
+    const data = await request.json();
+    
+    // Insert the new product into the database
     const result = await productsCollection.insertOne(data);
 
-    // 5. Return a success response
+    // After a successful insert, you can return the data you received
+    // along with the MongoDB-generated _id.
+    // The `result.ops[0]` property is deprecated, so we return the data directly.
     return NextResponse.json({
       message: 'Product added successfully!',
-      product: result.ops[0], // `result.ops[0]` contains the inserted document with its _id
-      insertedId: result.insertedId, // MongoDB's _id for the new document
-    }, { status: 201 }); // 201 Created status code
+      product: data,
+      insertedId: result.insertedId,
+    }, { status: 201 });
   } catch (error) {
-    // 6. Handle any errors during the process
     console.error('Error adding product:', error);
-    return NextResponse.json({ message: 'Error adding product.', error: error.message }, { status: 500 }); // 500 Internal Server Error
+    return NextResponse.json({ message: 'Error adding product.', error: error.message }, { status: 500 });
   }
 }
