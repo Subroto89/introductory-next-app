@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ⚡ Electronics Hub ⚡
 
-## Getting Started
+Welcome to **Electronics Hub**, your premier destination for cutting-edge electronics! This is a full-stack e-commerce application built with Next.js, featuring user authentication, product management, and a MongoDB backend.
 
-First, run the development server:
+## ✨ Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+* **User Authentication:** Secure sign-in/sign-out functionality using NextAuth.js, integrated with Google OAuth.
+* **Product Management:**
+    * Add new products to the database via a dedicated dashboard page.
+    * View a comprehensive list of all products.
+    * View individual product details on dedicated pages.
+* **Responsive Design:** A sleek, mobile-first design built with Tailwind CSS ensures a great user experience on any device.
+* **Persistent Storage:** Product data is securely stored and retrieved from a MongoDB database.
+* **Dynamic Routing:** Next.js App Router for efficient and intuitive navigation.
+* **Persistent Layout:** Navbar and Footer displayed across all pages using Next.js Layouts.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 🚀 Technologies Used
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+* **Framework:** [Next.js](https://nextjs.org/) (React Framework)
+* **Authentication:** [NextAuth.js](https://next-auth.js.org/)
+* **Database:** [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
+* **Database ODM:** [Mongoose](https://mongoosejs.com/) (If used, otherwise just mention MongoDB)
+* **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+* **Deployment:** [Vercel](https://vercel.com/)
+* **Package Manager:** npm or yarn
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🛠️ Getting Started
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Prerequisites
 
-## Deploy on Vercel
+Before you begin, ensure you have met the following requirements:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+* Node.js (LTS version recommended)
+* npm or yarn
+* A Google Cloud Project for OAuth credentials.
+* A MongoDB Atlas account and a cluster set up.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Installation
+
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/your-username/your-repo-name.git](https://github.com/your-username/your-repo-name.git)
+    cd your-repo-name
+    ```
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    # or
+    yarn install
+    ```
+
+---
+
+## ⚙️ Environment Variables
+
+Create a `.env.local` file in the root of your project and add the following environment variables:
