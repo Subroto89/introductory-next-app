@@ -2,7 +2,7 @@
 import Link from 'next/link';
 
 async function getProducts() {
-  const res = await fetch(`${process.env.NEXTAUTH_URL}/api/products`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/products`, {
     cache: 'no-store'
   });
 
@@ -12,7 +12,6 @@ async function getProducts() {
 
   return res.json();
 }
-
 
 export default async function ProductsPage() {
   let products = [];
