@@ -1,5 +1,7 @@
 import NextAuthSessionProvider from "@/components/SessionProvider";
 import "./globals.css";
+import Navbar from "@/components/shared/Navbar";
+import Footer from "@/components/shared/Footer";
 
 export const metadata = {
   title: "Next.js App",
@@ -11,7 +13,12 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <NextAuthSessionProvider>
+          <Navbar/>
+          <div className="min-h-[calc(100vh-150px)]">
+
           {children}
+          </div>
+          <Footer/>
         </NextAuthSessionProvider>
       </body>
     </html>
