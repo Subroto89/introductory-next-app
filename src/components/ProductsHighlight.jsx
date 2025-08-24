@@ -4,7 +4,7 @@ import productsData from '@/lib/productsData';
 
 export default function ProductHighlights() {
   return (
-    <section className="container mx-auto p-8 bg-gray-900 text-white rounded-xl shadow-lg border border-blue-700">
+    <section className="container mx-auto p-8 bg-gray-800 text-white">
       <h2 className="text-4xl font-extrabold text-center mb-10 text-blue-400">Featured Products</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {productsData.map((product) => (
