@@ -1,9 +1,10 @@
 // src/app/page.jsx
-import ProductHighlights from "@/components/ProductHighlights"; // Ensure this import path is correct
+import ProductsHighlight from "@/components/ProductsHighlight";
+import { Link } from "lucide-react";
 
 export default function Home() {
   return (
-    // The main container now manages the overall height and spacing
+    
     <main className="flex flex-col items-center bg-gradient-to-br from-gray-900 to-gray-700 text-white p-8">
       {/* Introductory Section */}
       <div className="flex flex-col items-center justify-center text-center py-16 px-4 max-w-4xl w-full">
@@ -23,16 +24,16 @@ export default function Home() {
           <p className="text-xl sm:text-2xl md:text-3xl font-semibold mt-8 text-yellow-300 animate-pulse">
             Discover innovation. Shop smart. Live connected.
           </p>
-          <button className="mt-10 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white text-xl font-bold rounded-full shadow-lg transform transition-transform duration-300 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50">
+          <Link href="/products" className="mt-10 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white text-xl font-bold rounded-full shadow-lg transform transition-transform duration-300 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50">
             Explore Products Now!
-          </button>
+          </Link>
         </div>
       </div>
 
       {/* Product Highlights Section */}
       {/* Removed min-h-screen here so it flows directly after the intro */}
       <div className="py-16 px-4 w-full">
-        <ProductHighlights />
+        <ProductsHighlight />
       </div>
     </main>
   );
