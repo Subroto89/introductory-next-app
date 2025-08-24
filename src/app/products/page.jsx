@@ -29,7 +29,7 @@ export default async function ProductsPage() {
           products.map((product) => (
             <div key={product._id} className="bg-gray-800 border border-blue-600 text-white rounded-lg shadow-lg p-6 flex flex-col items-center text-center">
               <h2 className="text-2xl font-semibold mb-2">{product.name}</h2>
-              <p className="text-gray-600 mb-4 flex-grow">{product.description}</p>
+              <p className=" mb-4 flex-grow">{product.description}</p>
               <p className="font-bold text-xl mb-4">${product.price}</p>
               <Link href={`/products/${product._id}`} className="mt-auto bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full transition-colors duration-200">
                 Details

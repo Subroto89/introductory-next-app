@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-         <ThemeProvider attribute="class" defaultTheme="system" enableSystem></ThemeProvider>
+         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
         <NextAuthSessionProvider>
           <Navbar/>
           <div className="min-h-[calc(100vh-150px)]">
@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
           <Footer/>
         </NextAuthSessionProvider>
         <Toaster/>
-        <ThemeProvider/>
+        </ThemeProvider>
       </body>
     </html>
   );
