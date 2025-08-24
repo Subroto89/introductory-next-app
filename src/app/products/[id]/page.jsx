@@ -24,7 +24,7 @@
 import { notFound } from 'next/navigation';
 
 async function getProductDetails(id) {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/products/${id}`);
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/products/${id}`);
 
   if (!res.ok) {
     return null;
