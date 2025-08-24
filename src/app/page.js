@@ -1,4 +1,5 @@
 // src/app/page.jsx
+"use client"
 import ProductsHighlight from "@/components/ProductsHighlight";
 import Link from 'next/link';
 
@@ -31,7 +32,6 @@ export default function Home() {
       </div>
 
       {/* Product Highlights Section */}
-      {/* Removed min-h-screen here so it flows directly after the intro */}
       <div className="py-16 px-4 w-full">
         <ProductsHighlight />
       </div>
