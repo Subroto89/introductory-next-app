@@ -1,6 +1,6 @@
 // src/app/page.jsx
 import ProductsHighlight from "@/components/ProductsHighlight";
-import { Link } from "lucide-react";
+import Link from 'next/link';
 
 export default function Home() {
   return (

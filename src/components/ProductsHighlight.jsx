@@ -1,5 +1,5 @@
 // src/components/ProductHighlights.jsx
-import productsData from '@/lib/productsData'; // Import your static data
+import productsData from '@/lib/productsData'; 
 
 export default function ProductHighlights() {
   return (
