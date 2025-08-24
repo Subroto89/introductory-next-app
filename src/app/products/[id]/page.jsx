@@ -47,9 +47,9 @@ export default async function ProductDetailsPage({ params }) {
   }
 
   return (
-    <div className="w-full mx-auto p-8 text-gray-700 bg-gray-900 min-h-screen">
+    <div className="w-full mx-auto p-8 min-h-screen">
       <h2 className='text-5xl font-extrabold text-blue-400 mb-6 text-center'>Product Details</h2>
-      <div className="bg-gray-800 rounded-xl shadow-2xl p-10 max-w-2xl mx-auto border border-blue-600 text-white">
+      <div className=" rounded-xl shadow-2xl p-10 max-w-2xl mx-auto border border-blue-600">
         <h1 className="text-4xl font-bold text-blue-300 mb-4">{product.name}</h1>
         <p className="text-gray-400 text-lg mb-6 leading-relaxed">{product.description}</p>
         <div className="flex items-baseline justify-between pt-4 border-t border-gray-700 mt-6">

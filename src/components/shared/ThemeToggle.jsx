@@ -1,37 +1,23 @@
-// src/components/shared/ThemeToggle.jsx
-'use client'; 
+"use client";
+import { useTheme } from "@/contexts/ThemeContext";
 
-import { useState, useEffect } from 'react';
-import { useTheme } from 'next-themes';
-import { Sun, Moon } from 'lucide-react'; 
-
-export default function ThemeToggle() {
-  const [mounted, setMounted] = useState(false);
-  const { theme, setTheme } = useTheme();
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) {
-    return null; 
-  }
-
-  const toggleTheme = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark');
-  };
+export default function ThemeToggler() {
+  const { theme, toggleTheme } = useTheme();
 
   return (
     <button
       onClick={toggleTheme}
-      className="p-2 rounded-full bg-gray-700 hover:bg-gray-600 text-white dark:bg-gray-200 dark:hover:bg-gray-300 dark:text-gray-900 transition-colors duration-200"
-      aria-label="Toggle theme"
+      style={{
+        padding: "6px 12px",
+        borderRadius: "8px",
+        border: "1px solid #ccc",
+        background: theme === "dark" ? "#333" : "#f0f0f0",
+        color: theme === "dark" ? "#fff" : "#000",
+        cursor: "pointer",
+        transition: "all 0.3s ease"
+      }}
     >
-      {theme === 'dark' ? (
-        <Sun className="h-5 w-5" /> 
-      ) : (
-        <Moon className="h-5 w-5" /> 
-      )}
+      {theme === "dark" ? "🌞 Light Mode" : "🌙 Dark Mode"}
     </button>
   );
 }

@@ -27,11 +27,11 @@ export default async function ProductsPage() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {products.length > 0 ? (
           products.map((product) => (
-            <div key={product._id} className="bg-gray-800 border border-blue-600 text-white rounded-lg shadow-lg p-6 flex flex-col items-center text-center">
+            <div key={product._id} className="border border-blue-600 rounded-lg shadow-lg p-6 flex flex-col items-center text-center">
               <h2 className="text-2xl font-semibold mb-2">{product.name}</h2>
               <p className=" mb-4 flex-grow">{product.description}</p>
               <p className="font-bold text-xl mb-4">${product.price}</p>
-              <Link href={`/products/${product._id}`} className="mt-auto bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full transition-colors duration-200">
+              <Link href={`/products/${product._id}`} className="mt-auto font-bold py-2 px-4 rounded-full transition-colors duration-200 border border-blue-400">
                 Details
               </Link>
             </div>

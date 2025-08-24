@@ -23,6 +23,7 @@ export default function LoginPage() {
 
   return (
     <div className="flex items-center justify-center min-h-screen">
+      <h2 className='text-white w-full text-center'>Sign In</h2>
       <button
         onClick={handleLogin}
         className="bg-blue-500 text-white p-4 rounded-md hover:bg-blue-600 transition-colors"

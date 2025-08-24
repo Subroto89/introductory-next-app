@@ -62,18 +62,18 @@ export default function AddProductPage() {
   };
 
   return (
-    <div className="container mx-auto p-8 min-h-[calc(100vh-180px)] bg-gray-900 text-white flex justify-center items-center">
-      <div className="bg-gray-800 p-10 rounded-xl shadow-2xl max-w-lg w-full border border-blue-600">
+    <div className="container mx-auto p-8 min-h-[calc(100vh-180px)] flex justify-center items-center">
+      <div className="p-10 rounded-xl shadow-2xl max-w-lg w-full border border-blue-600">
         <h1 className="text-4xl font-extrabold text-center mb-8 text-blue-400">Add New Product</h1>
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <label htmlFor="name" className="block text-lg font-medium text-gray-300 mb-2">
+            <label htmlFor="name" className="block text-lg font-medium mb-2">
               Product Name
             </label>
             <input
               type="text"
               id="name"
-              className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-blue-500 focus:border-blue-500 transition-colors"
+              className="w-full px-4 py-3 border border-gray-600 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-colors"
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
@@ -81,13 +81,13 @@ export default function AddProductPage() {
             />
           </div>
           <div>
-            <label htmlFor="description" className="block text-lg font-medium text-gray-300 mb-2">
+            <label htmlFor="description" className="block text-lg font-medium mb-2">
               Description
             </label>
             <textarea
               id="description"
               rows="4"
-              className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-blue-500 focus:border-blue-500 transition-colors resize-none"
+              className="w-full px-4 py-3 border border-gray-600 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-colors resize-none"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               required
@@ -95,7 +95,7 @@ export default function AddProductPage() {
             ></textarea>
           </div>
           <div>
-            <label htmlFor="price" className="block text-lg font-medium text-gray-300 mb-2">
+            <label htmlFor="price" className="block text-lg font-medium mb-2">
               Price ($)
             </label>
             <input
@@ -103,7 +103,7 @@ export default function AddProductPage() {
               id="price"
               step="0.01"
               min="0"
-              className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-blue-500 focus:border-blue-500 transition-colors"
+              className="w-full px-4 py-3 border border-gray-600 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-colors"
               value={price}
               onChange={(e) => setPrice(e.target.value)}
               required
@@ -112,13 +112,13 @@ export default function AddProductPage() {
           </div>
           {/* New field for Product Image URL */}
           <div>
-            <label htmlFor="imageUrl" className="block text-lg font-medium text-gray-300 mb-2">
+            <label htmlFor="imageUrl" className="block text-lg font-medium mb-2">
               Product Image URL (Optional)
             </label>
             <input
               type="text"
               id="imageUrl"
-              className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-blue-500 focus:border-blue-500 transition-colors"
+              className="w-full px-4 py-3 border border-gray-600 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-colors"
               value={imageUrl}
               onChange={(e) => setImageUrl(e.target.value)}
               disabled={loading}

@@ -1,15 +1,17 @@
 // src/app/page.jsx
 "use client"
 import ProductsHighlight from "@/components/ProductsHighlight";
+import { useTheme } from "@/contexts/ThemeContext";
 import Link from 'next/link';
 
 export default function Home() {
+  const {theme} = useTheme()
   return (
     
-    <main className="flex flex-col items-center bg-gradient-to-br from-gray-900 to-gray-700 text-white p-8">
+    <main className="flex flex-col items-center  p-8">
       {/* Introductory Section */}
       <div className="flex flex-col items-center justify-center text-center py-16 px-4 max-w-4xl w-full">
-        <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-8 drop-shadow-lg text-blue-400">
+        <h2 className="text-2xl sm:text-3xl md:text-5xl font-extrabold mb-8 drop-shadow-lg text-blue-400">
           Welcome to Electronics Hub!
         </h2>
 
@@ -22,7 +24,7 @@ export default function Home() {
             connect. Explore our diverse range of products, from powerful
             laptops to smart home devices, all at competitive prices.
           </p>
-          <p className="text-xl sm:text-2xl md:text-3xl font-semibold mt-8 text-yellow-300 animate-pulse">
+          <p className={`text-xl sm:text-2xl md:text-3xl font-semibold mt-8 animate-pulse ${theme==="dark" ? "text-yellow-600" : "text-orange-500"}`}>
             Discover innovation. Shop smart. Live connected.
           </p>
           <Link href="/products" className="mt-10 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white text-xl font-bold rounded-full shadow-lg transform transition-transform duration-300 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50">
