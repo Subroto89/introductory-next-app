@@ -21,54 +21,41 @@
 //   );
 // }
 
-// src/app/products/page.jsx
-import Link from 'next/link';
+import { notFound } from 'next/navigation';
 
-async function getProducts() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/products`, {
-    cache: 'no-store'
-  });
+async function getProductDetails(id) {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/products/${id}`);
 
   if (!res.ok) {
-    throw new Error('Failed to fetch product data');
+    return null;
   }
 
   return res.json();
 }
 
-export default async function ProductsPage() {
-  let products = [];
-  try {
-    products = await getProducts();
-  } catch (error) {
-    console.error(error);
+export default async function ProductDetailsPage({ params }) {
+  // Await the params object before destructuring
+  const { id } = params;
+  
+  // This is the line that will now correctly log the id
+  console.log(`[DetailsPage DEBUG] params.id = ${id}`);
+
+  const product = await getProductDetails(id);
+
+  if (!product) {
+    notFound();
   }
 
   return (
-    <div className="container mx-auto p-8">
-      <h1 className="text-4xl font-bold text-center mb-10 text-gray-800">Our Products</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {products.length > 0 ? (
-          products.map((product) => (
-            <div key={product._id} className="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center text-center transform transition-transform hover:scale-105 duration-300">
-              {/* Product Image */}
-              <img
-                src={product.imageUrl || `https://placehold.co/400x300/a0aec0/ffffff?text=No Image`} // Placeholder if no image
-                alt={product.name}
-                className="w-full h-48 object-cover rounded-md mb-4 shadow-sm"
-                onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/400x300/a0aec0/ffffff?text=Image Error"; }} // Fallback for broken images
-              />
-              <h2 className="text-2xl font-semibold mb-2 text-gray-900">{product.name}</h2>
-              <p className="text-gray-600 mb-4 flex-grow">{product.description}</p>
-              <p className="text-gray-800 font-bold text-xl mb-4">${product.price}</p>
-              <Link href={`/products/${product._id}`} className="mt-auto bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full transition-colors duration-200">
-                Details
-              </Link>
-            </div>
-          ))
-        ) : (
-          <p className="text-center text-gray-500 col-span-full">No products found.</p>
-        )}
+    <div className="container mx-auto p-8 text-gray-700 bg-gray-900 min-h-screen">
+      <h2 className='text-5xl font-extrabold text-blue-400 mb-6 text-center'>Product Details</h2>
+      <div className="bg-gray-800 rounded-xl shadow-2xl p-10 max-w-2xl mx-auto border border-blue-600 text-white">
+        <h1 className="text-4xl font-bold text-blue-300 mb-4">{product.name}</h1>
+        <p className="text-gray-400 text-lg mb-6 leading-relaxed">{product.description}</p>
+        <div className="flex items-baseline justify-between pt-4 border-t border-gray-700 mt-6">
+          <p className="text-blue-200 font-extrabold text-3xl">Price: ${product.price.toFixed(2)}</p>
+          <span className="text-sm text-gray-500">Product ID: {id}</span>
+        </div>
       </div>
     </div>
   );
