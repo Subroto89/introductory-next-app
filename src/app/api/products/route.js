@@ -1,3 +1,4 @@
+// src/app/api/products/route.js
 import { NextResponse } from 'next/server';
 import clientPromise from '@/lib/mongodb';
 
@@ -17,6 +18,7 @@ export async function GET() {
     return NextResponse.json({ message: 'Error fetching products.', error: error.message }, { status: 500 });
   }
 }
+
 
 // This handles POST requests to /api/products
 // It adds a new product to the database.

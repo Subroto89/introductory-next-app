@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useSession, signIn, signOut } from 'next-auth/react';
+import ThemeToggle from './ThemeToggle';
 
 export default function Navbar() {
   const { data: session, status } = useSession();
@@ -26,6 +27,9 @@ export default function Navbar() {
               <Link href="/dashboard/add-product" className="hover:text-gray-300">
                 Add Product
               </Link>
+
+              <ThemeToggle/>
+
               <button
                 onClick={() => signOut()}
                 className="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded-md"

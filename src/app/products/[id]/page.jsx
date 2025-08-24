@@ -35,7 +35,7 @@ async function getProductDetails(id) {
 
 export default async function ProductDetailsPage({ params }) {
   // Await the params object before destructuring
-  const { id } = await params;
+  const { id } = params;
   
   // This is the line that will now correctly log the id
   console.log(`[DetailsPage DEBUG] params.id = ${id}`);
