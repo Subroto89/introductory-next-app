@@ -1,3 +1,4 @@
+import ProductHighlights from "@/components/ProductsHighlight";
 
 export default function Home() {
   return (
@@ -19,6 +20,8 @@ export default function Home() {
             Explore Products Now!
           </button>
         </div>
+
+        <ProductHighlights/>
       </main>
     
     </>
