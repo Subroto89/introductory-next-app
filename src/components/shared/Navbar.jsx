@@ -38,13 +38,17 @@ export default function Navbar() {
               </button>
             </>
           ) : (
-            // Link for unauthenticated users
+            <>
+            <ThemeToggle/>
+            {/* Link for unauthenticated users */}
             <button
               onClick={() => signIn()}
               className="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded-md"
             >
               Sign In
-            </button>
+            </button>      
+            </>
+
           )}
         </div>
       </div>

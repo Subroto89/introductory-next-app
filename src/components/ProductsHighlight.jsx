@@ -15,7 +15,7 @@ export default function ProductHighlights() {
             <img
               src={product.imageUrl || `https://placehold.co/400x300/a0aec0/ffffff?text=No Image`}
               alt={product.name}
-              className="w-full h-48 object-cover rounded-md mb-4 shadow-sm border border-gray-600"
+              className="w-full h-64 object-cover rounded-md mb-4 shadow-sm border border-gray-600"
              
             />
             <h3 className="text-2xl font-semibold mb-2 text-blue-300">{product.name}</h3>

@@ -15,7 +15,7 @@ export default function Home() {
           Welcome to Electronics Hub!
         </h2>
 
-        <div className="text-center max-w-3xl space-y-6">
+        <div className="text-center max-w-7xl space-y-6">
           <p className="text-lg sm:text-xl md:text-2xl font-light leading-relaxed">
             Your premier destination for cutting-edge electronics. We offer a
             curated selection of the latest gadgets, high-performance
@@ -27,7 +27,7 @@ export default function Home() {
           <p className={`text-xl sm:text-2xl md:text-3xl font-semibold mt-8 animate-pulse ${theme==="dark" ? "text-yellow-600" : "text-orange-500"}`}>
             Discover innovation. Shop smart. Live connected.
           </p>
-          <Link href="/products" className="mt-10 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white text-xl font-bold rounded-full shadow-lg transform transition-transform duration-300 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50">
+          <Link href="/products" className="mt-10 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white text-sm md:text-xl font-bold rounded-full shadow-lg transform transition-transform duration-300 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50">
             Explore Products Now!
           </Link>
         </div>
